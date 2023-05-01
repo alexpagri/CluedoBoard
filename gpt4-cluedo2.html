@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cluedo Board</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin: 1rem auto;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid #999;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+    }
+
+    button {
+      cursor: pointer;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .pressed {
+      border: 3px solid;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <!-- Add more columns for more numbers if necessary -->
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Players -->
+      <tr>
+        <td colspan="4" style="font-weight:bold;">Players</td>
+      </tr>
+      <tr>
+        <td>Player 1</td>
+        <td>
+          <button class="btn">X</button>
+          <button class="btn">?</button>
+        </td>
+        <td>
+          <button class="btn">X</button>
+          <button class="btn">?</button>
+        </td>
+        <td>
+          <button class="btn">X</button>
+          <button class="btn">?</button>
+        </td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <!-- Add more rows for more players if necessary -->
+
+      <!-- Weapons -->
+      <tr>
+        <td colspan="4" style="font-weight:bold;">Weapons</td>
+      </tr>
+      <tr>
+        <td>Weapon 1</td>
+        <td>
+          <button class="btn">X</button>
+          <button class="btn">?</button>
+        </td>
+        <td>
+          <button class="btn">X</button>
+          <button class="btn">?</button>
+        </td>
+        <td>
+          <button class="btn">X</button>
+          <button class="btn">?</button>
+        </td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <!-- Add more rows for more weapons if necessary -->
+
+      <!-- Locations -->
+      <tr>
+        <td colspan="4" style="font-weight:bold;">Locations</td>
+      </tr>
+      <tr>
+        <td>Location 1</td>
+        <td>
+          <button class="btn">X</button>
+          <button class="btn">?</button>
+        </td>
+        <td>
+          <button class="btn">X</button>
+          <button class="btn">?</button>
+        </td>
+        <td>
+          <button class="btn">X</button>
+          <button class="btn">?</button>
+        </td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <!-- Add more rows for more locations if necessary -->
+    </tbody>
+  </table>
+  <script>
+    const buttons = document.querySelectorAll(".btn");
+
+    function toggleButtons(clickedBtn) {
+      const allBtns = Array.from(clickedBtn.parentElement.querySelectorAll(".btn"));
+      const otherBtns = allBtns.filter((btn) => btn !== clickedBtn);
+
+      clickedBtn.classList.toggle("pressed");
+      otherBtns?.forEach((btn) => btn.classList.remove("pressed"));
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        toggleButtons(btn);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
