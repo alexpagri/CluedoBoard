@@ -37,6 +37,14 @@
       background: none;
     }
 
+    .btn {
+      color: #ffffff00;
+    }
+
+    .btn-visible {
+      color: #ffffffff;
+    }
+
     .pressed {
       border: 3px solid;
       font-weight: bold;
@@ -350,10 +358,13 @@
 
     function selectOption(option) {
       if (currentButton) {
-        if (currentButton.textContent === option)
+        if (currentButton.textContent === option) {
           currentButton.textContent = "📃";
-        else
+          currentButton.classList.remove("btn-visible");
+        } else {
           currentButton.textContent = option;
+          currentButton.classList.add("btn-visible");
+        }
       }
       popup.style.display = "none";
     }
