@@ -31,12 +31,39 @@
     button {
       cursor: pointer;
       font-size: 1.5rem;
-      padding: 0.5rem 1rem;
+      width: 100%;
+      font-family: monospace;
     }
 
     .pressed {
       border: 3px solid;
       font-weight: bold;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .popup-content {
+      background-color: white;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .popup-row {
+      display: flex;
+      gap: 1rem;
     }
   </style>
 </head>
@@ -49,93 +76,285 @@
         <th>1</th>
         <th>2</th>
         <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
         <!-- Add more columns for more numbers if necessary -->
       </tr>
     </thead>
     <tbody>
       <!-- Players -->
       <tr>
-        <td colspan="4" style="font-weight:bold;">Players</td>
+        <td colspan="7" style="font-weight:bold;">Players</td>
       </tr>
       <tr>
-        <td>Player 1</td>
-        <td>
-          <button class="btn">X</button>
-          <button class="btn">?</button>
-        </td>
-        <td>
-          <button class="btn">X</button>
-          <button class="btn">?</button>
-        </td>
-        <td>
-          <button class="btn">X</button>
-          <button class="btn">?</button>
-        </td>
+        <td>Miss Scarlett</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Colonel Mustard</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Dr. Orchid</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Rev. Green</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Mrs. Peacock</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Professor Plum</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
         <!-- Add more cells for more numbers if necessary -->
       </tr>
       <!-- Add more rows for more players if necessary -->
 
       <!-- Weapons -->
       <tr>
-        <td colspan="4" style="font-weight:bold;">Weapons</td>
+        <td colspan="7" style="font-weight:bold;">Weapons</td>
       </tr>
       <tr>
-        <td>Weapon 1</td>
-        <td>
-          <button class="btn">X</button>
-          <button class="btn">?</button>
-        </td>
-        <td>
-          <button class="btn">X</button>
-          <button class="btn">?</button>
-        </td>
-        <td>
-          <button class="btn">X</button>
-          <button class="btn">?</button>
-        </td>
+        <td>Sfesnic</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Pumnal</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Funie</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Pistol</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Teava de plumb</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Cheie franceza</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
         <!-- Add more cells for more numbers if necessary -->
       </tr>
       <!-- Add more rows for more weapons if necessary -->
 
       <!-- Locations -->
       <tr>
-        <td colspan="4" style="font-weight:bold;">Locations</td>
+        <td colspan="7" style="font-weight:bold;">Locations</td>
       </tr>
       <tr>
-        <td>Location 1</td>
-        <td>
-          <button class="btn">X</button>
-          <button class="btn">?</button>
-        </td>
-        <td>
-          <button class="btn">X</button>
-          <button class="btn">?</button>
-        </td>
-        <td>
-          <button class="btn">X</button>
-          <button class="btn">?</button>
-        </td>
+        <td>Sala de dans</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Sala de biliard</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Veranda</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Sufragerie</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Hol</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Bucatarie</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Biblioteca</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Salon</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <!-- Add more cells for more numbers if necessary -->
+      </tr>
+      <tr>
+        <td>Birou</td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
+        <td><button class="btn">📃</button></td>
         <!-- Add more cells for more numbers if necessary -->
       </tr>
       <!-- Add more rows for more locations if necessary -->
     </tbody>
   </table>
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <div class="popup-row">
+        <button onclick="selectOption('❗️')">❗️</button>
+        <button onclick="selectOption('❓️')">❓️</button>
+        <button onclick="selectOption('❌')">❌</button>
+        <button onclick="selectOption('✔️')">✔️</button>
+      </div>
+      <div class="popup-row">
+        <button onclick="selectOption('1️⃣')">1️⃣</button>
+        <button onclick="selectOption('2️⃣')">2️⃣</button>
+        <button onclick="selectOption('3️⃣')">3️⃣</button>
+        <button onclick="selectOption('4️⃣')">4️⃣</button>
+        <button onclick="selectOption('5️⃣')">5️⃣</button>
+      </div>
+    </div>
+  </div>
   <script>
+
+    let currentButton = null;
+    const popup = document.getElementById("popup");
     const buttons = document.querySelectorAll(".btn");
-
-    function toggleButtons(clickedBtn) {
-      const allBtns = Array.from(clickedBtn.parentElement.querySelectorAll(".btn"));
-      const otherBtns = allBtns.filter((btn) => btn !== clickedBtn);
-
-      clickedBtn.classList.toggle("pressed");
-      otherBtns?.forEach((btn) => btn.classList.remove("pressed"));
-    }
 
     buttons.forEach((btn) => {
       btn.addEventListener("click", () => {
-        toggleButtons(btn);
+        openPopup(btn);
       });
     });
+
+    function openPopup(btn) {
+      currentButton = btn;
+      popup.style.display = "flex";
+    }
+
+    function selectOption(option) {
+      if (currentButton) {
+        if (currentButton.textContent === option)
+          currentButton.textContent = "📃";
+        else
+          currentButton.textContent = option;
+      }
+      popup.style.display = "none";
+    }
   </script>
 
 </body>
